@@ -11,6 +11,15 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 62.5%;
+
+    @include pc {
+        font-size: 75%;
+    }
+
+    @include bigPc {
+        font-size: 80%;
+    }
 }
 
 body {
@@ -61,4 +70,3 @@ textarea {
 :-ms-input-placeholder {
     opacity: 1;
 }
-

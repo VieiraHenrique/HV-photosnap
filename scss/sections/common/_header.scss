@@ -7,7 +7,7 @@
     z-index: 999;
 
     a {
-        font-size: 12px;
+        font-size: 1.2rem;
     }
 
     .wrapper {
@@ -45,7 +45,7 @@
                 text-align: center;
                 a {
                     font-weight: bold;
-                    font-size: 15px;
+                    font-size: 1.5rem;
                 }
             }
         }
@@ -60,7 +60,7 @@
                     margin: 0;
                     @include gap-horizontal(30px);
                     a {
-                        font-size: 12px;
+                        font-size: 1.2rem;
                         font-weight: normal;
                         @include transition;
                         &:hover {
@@ -94,7 +94,7 @@
             }
             .btn {
                 display: block;
-                font-size: 15px;
+                font-size: 1.5rem;
                 font-weight: bold;
                 text-align: center;
             }

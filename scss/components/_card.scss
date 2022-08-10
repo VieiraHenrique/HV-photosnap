@@ -1,13 +1,19 @@
 .card {
     width: 100%;
-    min-height: 500px;
+    height: 100%;
+    max-height: 300px;
     background-color: $black;
     color: $white;
     position: relative;
     display: block;
 
+    @include laptop13 {
+        max-height: 500px;
+    }
+
     &__img {
         object-fit: cover;
+        max-height: 100%;
         opacity: 0.8;
     }
 
@@ -19,12 +25,12 @@
     }
 
     &__title {
-        font-size: 18px;
+        font-size: 1.8rem;
         font-weight: bold;
     }
 
     &__subtitle {
-        font-size: 13px;
+        font-size: 1.3rem;
         font-weight: normal;
     }
 

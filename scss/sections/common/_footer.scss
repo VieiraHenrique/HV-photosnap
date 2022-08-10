@@ -1,0 +1,89 @@
+.footer {
+    background-color: $black;
+    @include container;
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        @include laptop13 {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        img {
+            margin-bottom: 30px;
+            @include laptop13 {
+                margin-bottom: 0;
+            }
+        }
+
+        @include laptop13 {
+            margin-right: 110px;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        img {
+            @include gap-horizontal(15px);
+            filter: saturate(0) brightness(5);
+            cursor: pointer;
+            &:hover {
+                filter: none;
+            }
+        }
+    }
+
+    &__nav {
+        li {
+            @include gap-vertical(20px);
+            text-align: center;
+
+            @include laptop13 {
+                text-align: left;
+            }
+        }
+
+        a {
+            color: $white;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+
+    &__aside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        align-items: center;
+        margin-top: 60px;
+
+        @include laptop13 {
+            align-items: flex-end;
+            margin-top: 0;
+            margin-left: auto;
+        }
+
+        .btn-arrow {
+            margin-right: 55px;
+            margin-bottom: 20px;
+            @include laptop13 {
+                margin-bottom: 0;
+            }
+        }
+
+        .copyright {
+            color: $grey-dark;
+            font-size: 1.6rem;
+        }
+    }
+}

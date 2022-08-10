@@ -1,0 +1,15 @@
+.specs {
+    @include container;
+    padding: 60px 0;
+
+    .wrapper {
+        grid-column: 2/-2;
+        display: grid;
+        gap: 10px;
+
+        @include laptop13 {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+    }
+}
