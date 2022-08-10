@@ -1,13 +1,16 @@
 /* FONTS */
 
-$font-primary: sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+$font-primary: "DM Sans", sans-serif;
 $font-secondary: serif;
 
 /* COLORS */
 
 $white: #fff;
 $black: #000;
-$grey: #DFDFDF;
+$grey: #dfdfdf;
+$grey-dark: #999;
 
 // BREAKPOINTS
 

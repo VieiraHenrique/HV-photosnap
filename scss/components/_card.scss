@@ -1,0 +1,33 @@
+.card {
+    width: 100%;
+    min-height: 500px;
+    background-color: $black;
+    color: $white;
+    position: relative;
+    display: block;
+
+    &__img {
+        object-fit: cover;
+        opacity: 0.8;
+    }
+
+    &__text {
+        position: absolute;
+        bottom: 0;
+        padding: 10%;
+        width: 100%;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &__subtitle {
+        font-size: 13px;
+        font-weight: normal;
+    }
+
+    .btn-arrow {
+    }
+}

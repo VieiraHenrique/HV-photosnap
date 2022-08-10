@@ -1,4 +1,4 @@
-.block {
+.d-block {
     display: block;
 }
 
@@ -28,4 +28,14 @@ $line-height-values: (
     .lh-#{$key} {
         line-height: $val;
     }
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.separator-line {
+    height: 1px;
+    width: 100%;
+    background-color: $grey;
 }

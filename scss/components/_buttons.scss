@@ -17,9 +17,44 @@
         color: $black;
         background-color: $white;
     }
+}
 
-    &--arrow {
+.btn-arrow {
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    font-size: 15px;
+
+    &::after {
+        @include pseudo;
+        left: 120%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        @include transition;
+    }
+
+    &:hover {
+        &::after {
+            transform: translateX(10px) translateY(-50%);
+        }
+    }
+
+    &--light {
+        color: $white;
+        &::after {
+            background-image: url("../../assets/shared/desktop/arrow-white.svg");
+        }
+    }
+
+    &--dark {
         color: $black;
-        background-color: transparent;
+        &::after {
+            background-image: url("../../assets/shared/desktop/arrow.svg");
+        }
     }
 }

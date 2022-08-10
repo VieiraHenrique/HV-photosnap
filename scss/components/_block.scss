@@ -1,0 +1,81 @@
+.block {
+    @include container($pc);
+
+    &--dark {
+        .block__text {
+            background-color: $black;
+            color: $white;
+        }
+    }
+
+    &--light {
+        .block__text {
+            background-color: $white;
+            color: $black;
+        }
+    }
+
+    &__text {
+        display: grid;
+        place-items: center;
+        grid-column: 1/-1;
+        grid-row: 2;
+        padding: 50px 17%;
+
+        @include laptop13 {
+            grid-row: 1;
+            grid-column: 1/7;
+            padding: 180px 17%;
+        }
+
+        @include pc {
+            grid-column: 2/7;
+        }
+    }
+
+    &__image {
+        grid-column: 1/-1;
+        grid-row: 1;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 1.27;
+        }
+
+        @include laptop13 {
+            grid-row: 1;
+            grid-column: 7/-1;
+        }
+
+        @include pc {
+            grid-column: 7/-2;
+        }
+    }
+
+    &--inverse {
+        @include laptop13 {
+            .block__text {
+                @include laptop13 {
+                    grid-row: 1;
+                    grid-column: 9/-1;
+                }
+
+                @include pc {
+                    grid-column: 9/-2;
+                }
+            }
+
+            .block__image {
+                @include laptop13 {
+                    grid-row: 1;
+                    grid-column: 1/9;
+                }
+
+                @include pc {
+                    grid-column: 2/9;
+                }
+            }
+        }
+    }
+}

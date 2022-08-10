@@ -1,10 +1,12 @@
 /* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
 /* COLORS */
 /* SHADOWS */
 /* MEDIA QUERIES */
 /* UTILITIES */
 .title-main {
-  font-size: 55px; }
+  font-size: 40px;
+  font-weight: normal; }
 
 .subtitle {
   font-size: 40px; }
@@ -648,9 +650,8 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  font-family: sans-serif;
-  overflow-x: hidden;
-  background-color: #DFDFDF; }
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden; }
 
 body::-webkit-scrollbar {
   width: 12px;
@@ -695,7 +696,7 @@ textarea {
 :-ms-input-placeholder {
   opacity: 1; }
 
-.block {
+.d-block {
   display: block; }
 
 .hidden {
@@ -737,6 +738,14 @@ textarea {
 .lh-2 {
   line-height: 2; }
 
+.no-scroll {
+  overflow: hidden; }
+
+.separator-line {
+  height: 1px;
+  width: 100%;
+  background-color: #dfdfdf; }
+
 .btn {
   display: inline-block;
   padding: 12px 25px;
@@ -747,20 +756,135 @@ textarea {
     color: #fff; }
     .btn--dark:hover {
       color: #000;
-      background-color: #DFDFDF; }
+      background-color: #dfdfdf; }
   .btn--light {
     color: #000;
     background-color: #fff; }
-  .btn--arrow {
-    color: #000;
-    background-color: transparent; }
+
+.btn-arrow {
+  display: inline-block;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 15px; }
+  .btn-arrow::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 120%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: 0.4s ease; }
+  .btn-arrow:hover::after {
+    transform: translateX(10px) translateY(-50%); }
+  .btn-arrow--light {
+    color: #fff; }
+    .btn-arrow--light::after {
+      background-image: url("../../assets/shared/desktop/arrow-white.svg"); }
+  .btn-arrow--dark {
+    color: #000; }
+    .btn-arrow--dark::after {
+      background-image: url("../../assets/shared/desktop/arrow.svg"); }
+
+.text-block p {
+  color: #999;
+  line-height: 1.65;
+  font-size: 15px; }
+
+.block {
+  display: grid;
+  grid-template-columns: [full-start] minmax(5vw, 1fr) [container-start] repeat(12, [col-start] minmax(22px, 160px) [col-end]) [container-end] minmax(5vw, 1fr) [full-end]; }
+  .block > * {
+    grid-column: container-start / container-end;
+    grid-row: 1; }
+  .block--dark .block__text {
+    background-color: #000;
+    color: #fff; }
+  .block--light .block__text {
+    background-color: #fff;
+    color: #000; }
+  .block__text {
+    display: grid;
+    place-items: center;
+    grid-column: 1/-1;
+    grid-row: 2;
+    padding: 50px 17%; }
+    @media screen and (min-width: 1280px) {
+      .block__text {
+        grid-row: 1;
+        grid-column: 1/7;
+        padding: 180px 17%; } }
+    @media screen and (min-width: 1920px) {
+      .block__text {
+        grid-column: 2/7; } }
+  .block__image {
+    grid-column: 1/-1;
+    grid-row: 1; }
+    .block__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 1.27; }
+    @media screen and (min-width: 1280px) {
+      .block__image {
+        grid-row: 1;
+        grid-column: 7/-1; } }
+    @media screen and (min-width: 1920px) {
+      .block__image {
+        grid-column: 7/-2; } }
+
+@media screen and (min-width: 1280px) and (min-width: 1280px) {
+  .block--inverse .block__text {
+    grid-row: 1;
+    grid-column: 9/-1; } }
+
+@media screen and (min-width: 1280px) and (min-width: 1920px) {
+  .block--inverse .block__text {
+    grid-column: 9/-2; } }
+
+@media screen and (min-width: 1280px) and (min-width: 1280px) {
+  .block--inverse .block__image {
+    grid-row: 1;
+    grid-column: 1/9; } }
+
+@media screen and (min-width: 1280px) and (min-width: 1920px) {
+  .block--inverse .block__image {
+    grid-column: 2/9; } }
+
+.card {
+  width: 100%;
+  min-height: 500px;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  display: block; }
+  .card__img {
+    object-fit: cover;
+    opacity: 0.8; }
+  .card__text {
+    position: absolute;
+    bottom: 0;
+    padding: 10%;
+    width: 100%; }
+  .card__title {
+    font-size: 18px;
+    font-weight: bold; }
+  .card__subtitle {
+    font-size: 13px;
+    font-weight: normal; }
 
 .header {
   display: grid;
   grid-template-columns: [full-start] minmax(5vw, 1fr) [container-start] repeat(12, [col-start] minmax(22px, 92.5px) [col-end]) [container-end] minmax(5vw, 1fr) [full-end];
   background-color: #fff;
   height: 72px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  position: relative;
+  z-index: 999; }
   .header > * {
     grid-column: container-start / container-end;
     grid-row: 1; }
@@ -769,13 +893,14 @@ textarea {
   .header .wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between; }
+    justify-content: space-between;
+    background-color: white; }
   .header__logo {
     max-width: 170px; }
   .header__nav {
-    position: fixed;
+    position: absolute;
     z-index: -1;
-    top: -100%;
+    top: -400%;
     left: 0;
     background-color: #fff;
     width: 100vw;
@@ -811,11 +936,8 @@ textarea {
               font-weight: normal;
               transition: 0.4s ease; }
               .header__nav ul li a:hover {
-                color: #DFDFDF; } }
+                color: #dfdfdf; } }
   .header .separator-line {
-    height: 1px;
-    width: 100%;
-    background-color: #DFDFDF;
     width: 80%; }
     @media screen and (min-width: 1280px) {
       .header .separator-line {
@@ -850,3 +972,17 @@ textarea {
         display: none; } }
   .header.opened .header__nav {
     top: 72px; }
+
+.stories {
+  display: grid;
+  grid-template-columns: [full-start] minmax(5vw, 1fr) [container-start] repeat(12, [col-start] minmax(22px, 160px) [col-end]) [container-end] minmax(5vw, 1fr) [full-end]; }
+  .stories > * {
+    grid-column: container-start / container-end;
+    grid-row: 1; }
+  .stories .wrapper {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); }
+    @media screen and (min-width: 1920px) {
+      .stories .wrapper {
+        grid-column: 2/-2; } }
