@@ -1,0 +1,38 @@
+.title {
+    &--main {
+        @include typo-title(55px);
+    }
+    &--sub {
+        @include typo-title(40px);
+    }
+
+    &--sup {
+        @include typo(10px);
+    }
+
+    &--small {
+        @include typo-title(24px);
+    }
+
+    &--small-extra {
+        @include typo(16px);
+        @include laptop13 {
+            text-align: left;
+        }
+    }
+}
+
+.lead {
+    @include typo(18px);
+    line-height: 1;
+}
+
+p,
+li,
+a {
+    @include typo(16px);
+}
+
+p {
+    margin-bottom: 20px;
+}

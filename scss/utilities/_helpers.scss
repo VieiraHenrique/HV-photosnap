@@ -1,0 +1,30 @@
+.block {
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+}
+
+$cols: (
+    "col-1": 1fr,
+    "col-2": repeat(2, 1fr),
+    "col-3": repeat(3, 1fr),
+    "col-4": repeat(4, 1fr),
+    "col-5": repeat(5, 1fr),
+    "col-6": repeat(6, 1fr),
+);
+
+@each $key, $val in $cols {
+    .grid-#{$key} {
+        grid-template-columns: $val;
+    }
+}

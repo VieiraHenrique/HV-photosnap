@@ -1,0 +1,69 @@
+$spacement: (
+    "1": 10px,
+    "2": 20px,
+    "3": 30px,
+    "4": 40px,
+    "5": 60px,
+    "6": 80px,
+    "7": 100px,
+    "8": 120px,
+    "9": 140px,
+    "10": 160px,
+    "11": 200px,
+    "12": 240px,
+    "13": 280px,
+    "14": 320px,
+    "15": 350px,
+
+);
+
+@each $key, $val in $spacement {
+    .mt-#{$key} {
+        margin-top: $val;
+    }
+    .mb-#{$key} {
+        margin-bottom: $val;
+    }
+    .ml-#{$key} {
+        margin-left: $val;
+    }
+    .mr-#{$key} {
+        margin-right: $val;
+    }
+    .my-#{$key} {
+        margin-top: $val;
+        margin-bottom: $val;
+    }
+    .mx-#{$key} {
+        margin-left: $val;
+        margin-right: $val;
+    }
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@each $key, $val in $spacement {
+    .pt-#{$key} {
+        padding-top: $val;
+    }
+    .pb-#{$key} {
+        padding-bottom: $val;
+    }
+    .pl-#{$key} {
+        padding-left: $val;
+    }
+    .pr-#{$key} {
+        padding-right: $val;
+    }
+    .py-#{$key} {
+        padding-top: $val;
+        padding-bottom: $val;
+    }
+    .px-#{$key} {
+        padding-left: $val;
+        padding-right: $val;
+    }
+}
