@@ -1,0 +1,119 @@
+.header {
+    @include container;
+    background-color: $white;
+    height: 72px;
+    text-transform: uppercase;
+
+    a {
+        font-size: 12px;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        max-width: 170px;
+    }
+
+    &__nav {
+        position: fixed;
+        z-index: -1;
+        top: -100%;
+        left: 0;
+        background-color: $white;
+        width: 100vw;
+        height: 253px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include transition;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+
+            li {
+                @include gap-vertical(30px);
+                text-align: center;
+                a {
+                    font-weight: bold;
+                    font-size: 15px;
+                }
+            }
+        }
+
+        @include laptop13 {
+            all: unset;
+
+            ul {
+                flex-direction: row;
+
+                li {
+                    margin: 0;
+                    @include gap-horizontal(30px);
+                    a {
+                        font-size: 12px;
+                        font-weight: normal;
+                        @include transition;
+                        &:hover {
+                            color: $grey;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .separator-line {
+        height: 1px;
+        width: 100%;
+        background-color: $grey;
+        width: 80%;
+        @include laptop13 {
+            display: none;
+        }
+    }
+
+    &__cta {
+        display: none;
+        @include laptop13 {
+            display: block;
+        }
+
+        &--mobile {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+            @include laptop13 {
+                display: none;
+            }
+            .btn {
+                display: block;
+                font-size: 15px;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    }
+
+    .hamburger {
+        width: 20px;
+        height: 20px;
+        background: url("../../../assets/shared/mobile/menu.svg");
+        @include background-reset;
+        background-size: contain;
+        @include laptop13 {
+            display: none;
+        }
+    }
+
+    &.opened {
+        .header__nav {
+            top: 72px;
+        }
+    }
+}

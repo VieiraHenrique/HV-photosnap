@@ -1,38 +1,34 @@
-.title {
-    &--main {
-        @include typo-title(55px);
-    }
-    &--sub {
-        @include typo-title(40px);
-    }
+.title-main {
+    font-size: 55px;
+}
 
-    &--sup {
-        @include typo(10px);
-    }
+.subtitle {
+    font-size: 40px;
+}
 
-    &--small {
-        @include typo-title(24px);
-    }
+.suptitle {
+    font-size: 10px;
+}
 
-    &--small-extra {
-        @include typo(16px);
-        @include laptop13 {
-            text-align: left;
-        }
-    }
+.title-small {
+    font-size: 24px;
+}
+
+.title-small-extra {
+    font-size: 16px;
 }
 
 .lead {
-    @include typo(18px);
-    line-height: 1;
+    font-size: 18px;
 }
 
 p,
 li,
 a {
-    @include typo(16px);
+    font-size: 14px;
 }
 
-p {
+.paragraph {
     margin-bottom: 20px;
+    line-height: 1.4;
 }
