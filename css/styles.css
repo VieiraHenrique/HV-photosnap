@@ -791,11 +791,11 @@ textarea {
   .btn-arrow--light {
     color: #fff; }
     .btn-arrow--light::after {
-      background-image: url("../../assets/shared/desktop/arrow-white.svg"); }
+      background-image: url("https://vieirahenrique.github.io/HV-photosnap/assets/shared/desktop/arrow-white.svg"); }
   .btn-arrow--dark {
     color: #000; }
     .btn-arrow--dark::after {
-      background-image: url("../../assets/shared/desktop/arrow.svg"); }
+      background-image: url("https://vieirahenrique.github.io/HV-photosnap/assets/shared/desktop/arrow.svg"); }
 
 .text-block p {
   color: #999;
@@ -994,16 +994,17 @@ textarea {
   .header .hamburger {
     width: 20px;
     height: 20px;
-    background: url("../../../assets/shared/mobile/menu.svg");
+    background-image: url("https://vieirahenrique.github.io/HV-photosnap/assets/shared/mobile/menu.svg");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-size: contain; }
+    background-size: contain;
+    background-position: center; }
     @media screen and (min-width: 1280px) {
       .header .hamburger {
         display: none; } }
   .header.opened .header__nav {
     top: 72px; }
+  .header.opened .hamburger {
+    background-image: url("https://vieirahenrique.github.io/HV-photosnap/assets/shared/mobile/close.svg"); }
 
 .footer {
   background-color: #000;

@@ -47,14 +47,14 @@
     &--light {
         color: $white;
         &::after {
-            background-image: url("../../assets/shared/desktop/arrow-white.svg");
+            background-image: url("https://vieirahenrique.github.io/HV-photosnap/assets/shared/desktop/arrow-white.svg");
         }
     }
 
     &--dark {
         color: $black;
         &::after {
-            background-image: url("../../assets/shared/desktop/arrow.svg");
+            background-image: url("https://vieirahenrique.github.io/HV-photosnap/assets/shared/desktop/arrow.svg");
         }
     }
 }

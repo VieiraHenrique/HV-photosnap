@@ -104,9 +104,10 @@
     .hamburger {
         width: 20px;
         height: 20px;
-        background: url("../../../assets/shared/mobile/menu.svg");
-        @include background-reset;
+        background-image: url("https://vieirahenrique.github.io/HV-photosnap/assets/shared/mobile/menu.svg");
+        background-repeat: no-repeat;
         background-size: contain;
+        background-position: center;
         @include laptop13 {
             display: none;
         }
@@ -115,6 +116,9 @@
     &.opened {
         .header__nav {
             top: 72px;
+        }
+        .hamburger {
+            background-image: url("https://vieirahenrique.github.io/HV-photosnap/assets/shared/mobile/close.svg");
         }
     }
 }
